@@ -1,0 +1,554 @@
+/* Reseteo básico de márgenes */
+*{
+    margin:0;
+}
+
+/* Estilos base del documento */
+body{
+    padding: 0 15%;
+    margin: 0rem 1.875rem;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Línea divisoria personalizada */
+hr {
+    position: relative;
+    top: 0px;
+    border: none;
+    height: 3px;
+    background: #3087aa;
+    margin-bottom: 0px;
+    width: auto;
+}
+
+/* Estilo para listas */
+ul {
+    list-style-position: outside;
+}
+
+/* Estilo base para etiquetas p */
+.parrafo{
+    font-size: 19px;
+}
+
+/* disposición principal en grid de dos columnas */
+.columnas{
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-template-rows: repeat(3, auto);
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+/* Margen superior del layout */
+.margen_superior{
+    grid-column: span 2;
+    display: flex;
+    height: 0.938rem;
+    width: 100%;
+}
+
+/* Cabecera con boton para desplegable (oculta por defecto) */
+.cabecera{
+    grid-column: span 2;
+    height: 80px;
+    text-align: center;
+    display: none;
+    grid-template-columns: max-content max-content max-content;
+    grid-template-areas:boton titulo imag;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.cabecera.nombre-min{
+    grid-area: titulo;
+}
+.cabecera.nombre-min.activar{
+    visibility: hidden;
+}
+.cabecera.imagen{
+    width: 50px; 
+    height: 50px;
+    grid-area: imag;
+}
+
+/* Estilos botón para abrir ventana */
+.base_btn{
+    background: #266066;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: 100;
+    transition: all .5s;
+}
+
+/* Estilos botón para cerrar ventana */
+.btn_cerrar{
+    position: relative;
+    top: 10px;
+    left: 9px;
+    display: flex;
+    flex-direction: column;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+.btn_cerrar.activar{
+    z-index: 100;
+}
+
+/* Estilos botón para desplegar ventana */
+.btn{
+    position: relative;
+    top: -24px;
+    left: 0;
+    margin: .65rem .5rem .5rem .65rem;
+    display: flex;
+    flex-direction: column;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0;
+    background: transparent;
+    gap: .42rem;
+    cursor: pointer;
+}
+
+/* Líneas del boton para desplegar */
+.palitos {
+    background: white;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transform-origin: left;
+    transition: all .6s;
+}
+
+.palito1 {
+    rotate: 22deg;
+}
+.palito1.activar{
+    transform: rotate(23deg);
+}
+
+.palito2 {
+    opacity: 0;
+}
+
+.palito3 {
+    rotate: -22deg;
+}
+.palito3.activar{
+    transform: rotate(-23deg);
+}
+
+/* ventana lateral colapsable para móvil */
+.col_izq_collaps{
+    display: flex;
+    position: fixed;
+    width: calc(100% - 130px);
+    height: auto;
+    padding: 30px 15px;
+    top: 0;
+    left: -100%;
+    overflow-y: auto;
+    transition: all 0.6s ease-in-out;
+    transition-property: left;
+    background: #dfebf7;
+    -webkit-box-shadow: 8px 0px 19px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 0px 19px 2px rgba(0,0,0,0.75);
+    box-shadow: 8px 0px 19px 2px rgba(0,0,0,0.75);
+}
+
+.col_izq_collaps.desplegar{
+    left: 0;
+    visibility: visible;
+}
+
+.col_izq_collaps h2{
+    margin-left: 60px;
+    font-size: 1.1rem;
+    text-wrap: balance;
+}
+
+.col_izq{
+    margin-top: 16px;
+    height: auto;
+    padding: 0em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.triangulo_celeste{
+    width: 100%;
+    height: 100%;
+    background: url(imagenes/triangulo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rombo {
+    width: 100%; 
+    height: 22em;
+    z-index: 110;
+    background: url(imagenes/perfil.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo_izq{
+    padding: 0em;
+    height: 100%;
+    background: #dfebf7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenedor_izq{
+    margin-left: 1em;
+}
+
+.nombre{
+    padding: 2em 0em 2em 1.5em;
+    font-size: 1em;
+    line-height: 2.5em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+/* Estilos botón de descarga PDF */
+#wrapper-btn-pdf {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .contenedor-btn-pdf{
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+}
+
+.btn-pdf {
+    text-decoration: none;
+    font-size:16px;
+    font-weight: 600;
+    background-color: #266066;
+    padding:24px 24px 24px 32px;
+    display:flex;
+    align-items:center;
+    border-radius:99px;
+    position:relative;
+    transition: all .5s cubic-bezier(.77,0,.175,1);
+    
+    .text-btn{
+        width: 140px;
+        color:#fff;
+        line-height:1;
+        position:relative;
+        z-index:5;
+        margin: auto;
+    }
+    
+    .svg-btn-pdf{
+        display:inline-block;
+        position:relative;
+        z-index:5;
+        transform: rotate(0deg) translateX(0);
+        transform-origin: left;
+        transition: all .5s cubic-bezier(.77,0,.175,1);
+    }
+    
+    &::before{
+        content:'';
+        background-color:#3087aa;
+        width:32px;
+        height:32px;
+        display:block;
+        position:absolute;
+        z-index:1;
+        border-radius:99px;
+        top:50%;
+        right:16px;
+        transform:translateY(-50%);
+        transition: all .5s cubic-bezier(.77,0,.175,1);
+    }
+}
+
+.btn-pdf:hover{
+    .svg-btn-pdf{
+        transform: rotate(45deg) translateX(-8px);
+    }
+    
+    &::before{
+        content:'';
+        width:100%;
+        height:100%;
+        right:0;
+    }
+}
+
+/* Estilos botón de descarga PDF para ventana colpsada*/
+#wrapper-btn-pdf-1 {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .contenedor-btn-pdf-1{
+        width: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+}
+
+.btn-pdf-1 {
+    text-decoration: none;
+    font-size:12px;
+    font-weight: 600;
+    background-color: #266066;
+    padding:16px 16px 16px 24px;
+    display:flex;
+    align-items:center;
+    border-radius:99px;
+    position:relative;
+    transition: all .5s cubic-bezier(.77,0,.175,1);
+    
+    .text-btn-1{
+        width: 110px;
+        color:#fff;
+        line-height:1;
+        position:relative;
+        z-index:5;
+        margin: auto;
+    }
+    
+    .svg-btn-pdf-1{
+        display:inline-block;
+        position:relative;
+        z-index:5;
+        transform: rotate(0deg) translateX(0);
+        transform-origin: left;
+        transition: all .5s cubic-bezier(.77,0,.175,1);
+    }
+    
+    &::before{
+        content:'';
+        background-color:#3087aa;
+        width:16px;
+        height:16px;
+        display:block;
+        position:absolute;
+        z-index:1;
+        border-radius:99px;
+        top:50%;
+        right:16px;
+        transform:translateY(-50%);
+        transition: all .5s cubic-bezier(.77,0,.175,1);
+    }
+}
+
+.btn-pdf-1:hover{
+    .svg-btn-pdf-1{
+        transform: rotate(45deg) translateX(-8px);
+    }
+    
+    &::before{
+        content:'';
+        width:100%;
+        height:100%;
+        right:0;
+    }
+}
+
+/* Mas estilos columna izquierda */
+.habilidades{
+    height: auto;
+    padding: 1.5em 1em 2em;
+    text-wrap: pretty;
+    display: block;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.textos{
+    display: none;
+}
+@media (pointer: coarse) {
+    .textos{display: block;}
+}
+
+/* Estilos columna derecha */
+.col_der{
+    margin-top: -16px;
+    padding: 1em 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.tarjeta {
+	display: grid;
+	grid-template-columns: 1.875em auto;
+	grid-template-rows: 2.5rem 1.875em auto;
+    width: 100%;
+    height: 100%;
+}
+
+.titulo_tar{
+    background: #266066;
+    color: white;
+    font-size: 1.25em;
+    line-height: 1.25em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 2;
+}
+
+.borde1{
+    width: 0;
+    height: 0;
+    border-top: 1.875em solid #3087aa;
+    border-left: 1.875em solid #dfebf7;
+}
+
+.borde2{
+    background: #dfebf7;
+    height: auto;
+}
+
+.contenido_tar{
+    background: white;
+    color: black;
+    font-size: 0.9375em;
+    line-height: 1.5625em;
+    padding: 0.625em 0.625em 1.25rem;
+    text-wrap: pretty;
+    display: block;
+    align-items: center;
+    justify-content: justify;
+    grid-row: span 2;
+}
+
+/* Estilos del footer */
+.pie{
+    grid-column: span 2;
+    text-align: center;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .contenedor-pie{
+        display: flex;
+    }
+
+    .texto-pie{
+        color: grey;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .svg-pie{
+        width: 20px;
+        height: auto;
+        filter: brightness(0) saturate(100%) invert(43%) sepia(51%) saturate(603%) hue-rotate(152deg) brightness(98%) contrast(87%);
+    }
+}
+
+/* Ajustes para panatallas pequeñas */
+@media (max-width: 1200px){
+    body{
+        padding:7%;
+    }
+
+    .parrafo{
+        font-size: .95em;
+    }
+}
+
+@media (max-width: 992px){
+    body{
+        padding:0;
+    }
+
+    .pie{
+        .texto-pie{font-size: 11px;}
+        .svg-pie{width: 16px;}
+    }
+
+    p, h3, h4, li {
+        font-size: .85em;
+    }
+}
+
+@media (min-width: 768px){
+    .col_izq_collaps{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    h2{
+        font-size: .9em;
+    }
+
+    .cabecera {
+        display: grid;
+    }
+
+    .margen_superior {
+        display: none;
+    }
+
+    .columnas {
+        grid-template-columns: 1fr; /* Solo una columna visible */
+    }
+
+    .col_izq {
+        display: none; /* Oculta la columna izquierda */
+    }
+
+    .col_der {
+        padding: 0em; /* Ajusta el espacio para mejorar el diseño */
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: .85em;
+    }
+}
+
+@media (max-width: 420px){
+    .pie{
+        .contenedor-pie{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

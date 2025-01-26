@@ -1,0 +1,955 @@
+/* Variables de colores para filtros SVG */
+:root{
+    --oscuro: invert(43%) sepia(51%) saturate(603%) hue-rotate(152deg) brightness(98%) contrast(87%);
+    --claro: invert(75%) sepia(66%) saturate(2950%) hue-rotate(165deg) brightness(92%) contrast(86%);
+}
+
+/* Contenedor principal de iconos
+   - Usa flexbox para distribuir los iconos
+   - Permite wrapping para múltiples líneas */
+.contenedor_iconos{
+    width: 1005;
+    height: auto;
+    padding: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+/* Caja individual para cada icono
+    - Dimensiones fijas de 80x80px */
+.caja_iconos{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+}
+/* Ocultar iconos en dispositivos táctiles */
+@media (pointer: coarse){
+    .caja_iconos{display: none;}
+}
+
+/* Estilos base para todos los iconos
+   - Centrado con flexbox
+   - Transición suave al hacer hover */
+.icono{
+    display: flex;
+    position: absolute;
+    padding: auto;
+    margin: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+/* Texto descriptivo del icono
+   - Inicialmente transparente
+   - Se muestra al hacer hover */
+.texto-icono{
+    color: transparent;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    width: 80px;
+    transition: .3s ease;
+}
+
+/* Estilos específicos para cada icono y sus estados hover */
+
+/* ICONO HTML */
+.i-1{
+    height: 90%;
+}
+
+.html{
+    position: absolute;
+    transform: translateX(65%);
+    height: 80%;
+    width: auto;
+    padding: 0;
+}
+
+#html-2{
+    filter: var(--oscuro)
+}
+
+#html-1{
+    filter: var(--claro);
+}
+
+.i-1:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(3%) translateY(-35%);
+    }
+
+    .html{transform: translateX(63%) translateY(-10%);}
+
+    #html-2{
+        filter: brightness(0) saturate(100%) invert(36%) sepia(10%) saturate(7424%) hue-rotate(340deg) brightness(108%) contrast(99%);
+    }
+
+    #html-1{
+        filter: brightness(0) saturate(100%) invert(66%) sepia(10%) saturate(2507%) hue-rotate(327deg) brightness(84%) contrast(119%);
+    }
+}
+
+/* ICONO CSS */
+.i-2{
+    height: 90%;
+}
+
+.css{
+    position: absolute;
+    transform: translateX(65%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#css-oscuro{
+    filter: var(--oscuro);
+}
+
+#css-claro{
+    filter: var(--claro);
+}
+
+.i-2:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(6%) translateY(-35%);;
+    }
+
+    .css{transform: translateX(63%) translateY(-10%);}
+
+    #css-oscuro{
+        filter: brightness(0) saturate(100%) invert(39%) sepia(82%) saturate(529%) hue-rotate(161deg) brightness(87%) contrast(99%);
+    }
+
+    #css-claro{
+        filter: brightness(0) saturate(100%) invert(68%) sepia(8%) saturate(6695%) hue-rotate(167deg) brightness(89%) contrast(94%);
+    }
+}
+
+/* ICONO SVG */
+.i-3{
+    height: 90%;
+}
+
+.svg-class{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#svg-oscuro{
+    filter: var(--oscuro);
+}
+
+#svg-claro{
+    filter: var(--claro);
+}
+
+.i-3:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(7%) translateY(-35%);
+    }
+
+    .svg-class{transform: translateX(63%) translateY(-10%);}
+
+    #svg-oscuro{
+        filter: brightness(0) saturate(100%);
+    }
+
+    #svg-claro{
+        filter: brightness(0) saturate(100%) invert(92%) sepia(19%) saturate(5435%) hue-rotate(326deg) brightness(100%) contrast(105%);
+    }
+}
+
+/* ICONO GIT */
+.i-4{
+    height: 94%;
+}
+
+.git{
+    position: absolute;
+    transform: translateX(70%) translateY(-5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#git-color{
+    filter: var(--oscuro);
+}
+
+.i-4:hover{
+    height: 104%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(7%) translateY(-35%);
+    }
+
+    .git{transform: translateX(63%) translateY(-10%);}
+
+    #git-color{
+        filter: brightness(0) saturate(100%) invert(41%) sepia(7%) saturate(6033%) hue-rotate(322deg) brightness(99%) contrast(107%);
+    }
+}
+
+/* ICONO BOOTSTRAP */
+.i-5{
+    height: 94%;
+}
+
+.bootstrap{
+    position: absolute;
+    transform: translateX(60%) translateY(-12%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#bootstrap-fondo{
+    filter: var(--oscuro);
+}
+
+.i-5:hover{
+    height: 104%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(10%) translateY(-45%);
+    }
+
+    .bootstrap{transform: translateX(63%) translateY(-6%);}
+
+    #bootstrap-fondo{
+        filter: brightness(0) saturate(100%) invert(17%) sepia(85%) saturate(7489%) hue-rotate(271deg) brightness(96%) contrast(106%);
+    }
+}
+
+/* ICONO ASP.NET */
+.i-6{
+    height: 90%;
+}
+
+.asp{
+    position: absolute;
+    transform: translateX(55%) translateY(-12%);
+    height: 52%;
+    width: auto;
+    padding: 0;
+}
+
+#asp-oscuro{
+    filter: var(--oscuro);
+}
+
+#asp-claro{
+    filter: var(--claro);
+}
+
+.i-6:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(13%) translateY(-70%);
+    }
+
+    .asp{transform: translateX(63%) translateY(-6%);}
+
+    #asp-oscuro{
+        filter: brightness(0) saturate(100%) invert(42%) sepia(86%) saturate(3775%) hue-rotate(181deg) brightness(92%) contrast(85%);
+    }
+
+    #asp-claro{
+        filter: brightness(0) saturate(100%) invert(73%) sepia(50%) saturate(3865%) hue-rotate(171deg) brightness(110%) contrast(92%);
+    }
+}
+
+/* ICONO PHP */
+.i-7{
+    height: 95%;
+}
+
+.php-class{
+    position: absolute;
+    transform: translateX(58%) translateY(5%);
+    height: 95%;
+    width: auto;
+    padding: 0;
+}
+
+#php-fondo{
+    filter: var(--oscuro);
+}
+
+.i-7:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(-4%) translateY(-60%);
+    }
+
+    .php-class{transform: translateX(50%) translateY(-1%);}
+
+    #php-fondo{
+        filter: brightness(0) saturate(100%) invert(49%) sepia(24%) saturate(969%) hue-rotate(184deg) brightness(91%) contrast(86%);
+    }
+}
+
+/* ICONO C# */
+.i-8{
+    height: 80%;
+}
+
+.C_sharp{
+    position: absolute;
+    transform: translateX(78%) translateY(13%);
+    height: 80%;
+    width: auto;
+    padding: 0;
+}
+
+#C_Sharp-claro {filter: var(--claro);}
+
+#C_Sharp-oscuro2, #C_Sharp-oscuro1 {filter: var(--oscuro);}
+
+.i-8:hover{
+    height: 90%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(6%) translateY(10%);
+    }
+
+    .C_sharp{transform: translateX(75%) translateY(3%);}
+
+    #C_Sharp-claro{
+        filter: brightness(0) saturate(100%) invert(57%) sepia(100%) saturate(1644%) hue-rotate(219deg) brightness(91%) contrast(89%);
+    }
+    
+    #C_Sharp-oscuro1{
+        filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(7134%) hue-rotate(269deg) brightness(56%) contrast(118%);
+    }
+
+    #C_Sharp-oscuro2{
+        filter: brightness(0) saturate(100%) invert(8%) sepia(77%) saturate(7484%) hue-rotate(258deg) brightness(97%) contrast(101%);
+    }
+}
+
+/* ICONO JAVASCRIPT */
+.i-9{
+    height: 75%;
+}
+
+.javascript{
+    position: absolute;
+    transform: translateX(65%) translateY(23%);
+    height: 75%;
+    width: auto;
+    padding: 0;
+}
+
+#JS-letras{filter: var(--oscuro);}
+
+#JS-fondo{filter: var(--claro);}
+
+.i-9:hover{
+    height: 85%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(-14%) translateY(-1%);
+    }
+
+    .javascript{transform: translateX(60%);}
+
+    #JS-letras{filter: brightness(0) saturate(100%);}
+
+    #JS-fondo{
+        filter: brightness(0) saturate(100%) invert(88%) sepia(87%) saturate(5397%) hue-rotate(338deg) brightness(101%) contrast(94%);
+    }
+}
+
+/* ICONO KALI */
+.i-10{
+    height: 90%;
+}
+
+.kali{
+    position: absolute;
+    transform: translateX(55%);
+    height: 100%;
+    width: auto;
+    padding: 0;
+}
+
+#kali_linux{
+    filter: var(--oscuro);
+}
+
+.i-10:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(4%) translateY(-10%);
+    }
+
+    .kali{transform: translateX(43%) translateY(-10%);}
+
+    #kali_linux{
+        filter: brightness(0) saturate(100%) invert(9%) sepia(95%) saturate(7477%) hue-rotate(287deg) brightness(97%) contrast(107%);
+    }
+}
+
+/* ICONO SECURITY ONION */
+.i-11{
+    height: 84%;
+}
+
+.s-o{
+    position: absolute;
+    transform: translateX(70%) translateY(5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#security_onion-oscuro{filter: var(--oscuro);}
+
+#security_onion-claro{filter: var(--claro);}
+
+.i-11:hover{
+    height: 88%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(-7%) translateY(35%);
+    }
+
+    .s-0{transform: translateX(-20%) translateY(0%);}
+
+    #security_onion-oscuro{filter: brightness(0) saturate(100%);}
+
+    #security_onion-claro{
+        filter: brightness(0) saturate(100%) invert(29%) sepia(89%) saturate(1954%) hue-rotate(208deg) brightness(100%) contrast(102%);
+    }
+}
+
+/* ICONO WIRESHARK */
+.i-12{
+    height: 80%;
+}
+
+.wireshark{
+    position: absolute;
+    transform: translateX(70%) translateY(5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#wireshark-fondo{filter: var(--oscuro);}
+
+.i-12:hover{
+    height: 86%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateY(35%);
+    }
+
+    .wireshark{transform: translateX(67%) translateY(0%);}
+
+    #wireshark-fondo{
+        filter: brightness(0) saturate(100%) invert(46%) sepia(81%) saturate(409%) hue-rotate(154deg) brightness(97%) contrast(93%);
+    }
+}
+
+/* ICONO PFSENSE */
+.i-13{
+    height: 80%;
+}
+
+.pfSense{
+    position: absolute;
+    transform: translateX(70%) translateY(5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#pfsense-claro{filter: var(--claro);}
+
+#pfsense-oscuro, #pfsense-intermedio{filter: var(--oscuro);}
+
+.i-13:hover{
+    height: 86%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateY(35%);
+    }
+
+    .pfSense{transform: translateX(67%) translateY(0%);}
+
+    #pfsense-oscuro{
+        filter: brightness(0) saturate(100%) invert(11%) sepia(51%) saturate(3510%) hue-rotate(238deg) brightness(111%) contrast(116%);
+    }
+
+    #pfsense-intermedio{
+        filter: brightness(0) saturate(100%) invert(23%) sepia(62%) saturate(2592%) hue-rotate(217deg) brightness(86%) contrast(89%);
+    }
+
+    #pfsense-claro{
+        filter: brightness(0) saturate(100%) invert(35%) sepia(64%) saturate(1657%) hue-rotate(186deg) brightness(91%) contrast(89%);
+    }
+}
+
+/* ICONO SQLMAP */
+.i-14{
+    height: 90%;
+}
+
+.sqlmap{
+    position: absolute;
+    transform: translateX(57%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#sqlmap{filter: var(--oscuro);}
+
+.i-14:hover{
+    height: 105%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(-5%) translateY(-125%);
+    }
+
+    .sqlmap{transform: translateX(50%) translateY(-18%);}
+
+    #sqlmap{
+        filter: brightness(0) saturate(100%) invert(27%) sepia(77%) saturate(5822%) hue-rotate(352deg) brightness(89%) contrast(134%);
+    }
+}
+
+/* ICONO THC HYDRA */
+.i-15{
+    height: 90%;
+}
+
+.hydra{
+    position: absolute;
+    transform: translateX(55%);
+    height: 100%;
+    width: auto;
+    padding: 0;
+}
+
+#hydra-oscuro, #hydra-intermedio, #hydra-claro {filter: var(--claro);}
+
+#hydra-letras {filter: var(--oscuro);}
+
+.i-15:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(-5%) translateY(-25%);
+    }
+
+    .hydra{transform: translateX(43%) translateY(-5%);}
+
+    #hydra-oscuro{
+        filter: brightness(0) saturate(100%) invert(29%) sepia(70%) saturate(7497%) hue-rotate(20deg) brightness(93%) contrast(102%);
+    }
+
+    #hydra-intermedio{
+        filter: brightness(0) saturate(100%) invert(51%) sepia(48%) saturate(3997%) hue-rotate(342deg) brightness(85%) contrast(92%);
+    }
+
+    #hydra-claro{
+        filter: brightness(0) saturate(100%) invert(93%) sepia(33%) saturate(3070%) hue-rotate(295deg) brightness(102%) contrast(82%);
+    }
+
+    #hydra-letras{filter: brightness(0) saturate(100%);}
+}
+
+/* ICONO BETTERCAP */
+.i-16{
+    height: 90%;
+}
+
+.bettercap{
+    position: absolute;
+    transform: translateX(60%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#bettercap-claro-gris, #bettercap-claro-celeste {filter: var(--claro);}
+
+#bettercap-oscuro {filter: var(--oscuro);}
+
+.i-16:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateY(-35%);
+    }
+
+    .bettercap{transform: translateX(55%) translateY(-5%);}
+
+    #bettercap-claro-gris{
+        filter: brightness(0) saturate(100%) invert(15%) sepia(2%) saturate(4597%) hue-rotate(175deg) brightness(101%) contrast(78%);
+    }
+
+    #bettercap-claro-celeste{
+        filter: brightness(0) saturate(100%) invert(77%) sepia(23%) saturate(3276%) hue-rotate(183deg) brightness(110%) contrast(107%);
+    }
+
+    #bettercap-oscuro{filter: brightness(0) saturate(100%);}
+}
+
+/* ICONO BURPSUITE */
+.i-17{
+    height: 80%;
+}
+
+.burpsuite{
+    position: absolute;
+    transform: translateX(70%) translateY(5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#burpsuite-claro{filter: var(--claro);}
+
+#burpsuite-oscuro, #pfsense-intermedio{filter: var(--oscuro);}
+
+.i-17:hover{
+    height: 86%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateY(35%);
+    }
+
+    .burpsuite{transform: translateX(67%) translateY(0%);}
+
+    #burpsuite-oscuro{
+        filter: brightness(0) saturate(100%) invert(13%) sepia(12%) saturate(12%) hue-rotate(324deg) brightness(101%) contrast(82%);
+    }
+
+    #burpsuite-claro{
+        filter: brightness(0) saturate(100%) invert(40%) sepia(97%) saturate(767%) hue-rotate(337deg) brightness(94%) contrast(93%);
+    }
+}
+
+/* ICONO METASPLOIT */
+.i-18{
+    height: 90%;
+}
+
+.metasploit{
+    position: absolute;
+    transform: translateX(65%);
+    height: 80%;
+    width: auto;
+    padding: 0;
+}
+
+#metasploit-oscuro{filter: var(--oscuro)}
+
+#metasploit-claro{filter: var(--claro);}
+
+.i-18:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(3%) translateY(-35%);
+    }
+
+    .metasploit{transform: translateX(74%) translateY(-10%);}
+
+    #metasploit-oscuro{
+        filter: brightness(0) saturate(100%) invert(36%) sepia(5%) saturate(5746%) hue-rotate(163deg) brightness(95%) contrast(93%);
+    }
+
+    #metasploit-claro{
+        filter: brightness(0) saturate(100%) invert(36%) sepia(92%) saturate(682%) hue-rotate(166deg) brightness(88%) contrast(99%);
+    }
+}
+
+/* ICONO AUTOCAD */
+.i-19{
+    height: 90%;
+}
+
+.autocad{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 90%;
+    width: auto;
+    padding: 0;
+}
+
+#autocad-oscuro{filter: var(--oscuro);
+}
+
+#autocad-claro1, #autocad-claro2{filter: var(--claro);}
+
+.i-19:hover{
+    height: 100%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(7%) translateY(-35%);
+    }
+
+    .autocad{transform: translateX(63%) translateY(-10%);}
+
+    #autocad-claro1{
+        filter: brightness(0) saturate(100%) invert(54%) sepia(32%) saturate(3978%) hue-rotate(309deg) brightness(93%) contrast(93%);
+    }
+
+    #autocad-claro2{
+        filter: brightness(0) saturate(100%) invert(23%) sepia(94%) saturate(7474%) hue-rotate(336deg) brightness(92%) contrast(92%);
+    }
+
+    #autocad-oscuro{
+        filter: brightness(0) saturate(100%) invert(11%) sepia(59%) saturate(3633%) hue-rotate(325deg) brightness(98%) contrast(108%);
+    }
+}
+
+/* ICONO ILUSTRATOR */
+.i-20{
+    height: 86%;
+}
+
+.ilustrator{
+    position: absolute;
+    transform: translateX(72%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#ilustrator-oscuro{filter: var(--oscuro);}
+
+#ilustrator-claro{filter: var(--claro);}
+
+.i-20:hover{
+    height: 96%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(7%) translateY(-35%);
+    }
+
+    .ilustrator{transform: translateX(65%) translateY(-10%);}
+
+    #ilustrator-oscuro{
+        filter: brightness(0) saturate(100%) invert(7%) sepia(64%) saturate(2815%) hue-rotate(357deg) brightness(94%) contrast(114%);
+    }
+
+    #ilustrator-claro{
+        filter: brightness(0) saturate(100%) invert(60%) sepia(59%) saturate(2021%) hue-rotate(0deg) brightness(102%) contrast(106%);
+    }
+}
+
+/* ICONO INKSCAPE */
+.i-21{
+    height: 86%;
+}
+
+.inkscape{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#inkscape-oscuro{filter: var(--oscuro);
+}
+
+#inkscape-claro{filter: var(--claro);}
+
+.i-21:hover{
+    height: 96%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(2%) translateY(-35%);
+    }
+
+    .inkscape{transform: translateX(65%) translateY(-10%);}
+
+    #inkscape-oscuro{filter: brightness(0) saturate(100%);}
+
+    #inkscape-claro{
+        filter: brightness(0) saturate(100%) invert(83%) sepia(94%) saturate(0%) hue-rotate(161deg) brightness(105%) contrast(101%);
+    }
+}
+
+/* ICONO FILMORA */
+.i-22{
+    height: 86%;
+}
+
+.filmora{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#filmora-oscuro{filter: var(--oscuro);}
+
+#filmora-rectangulo{filter: var(--claro);}
+
+.i-22:hover{
+    height: 96%;
+
+    .texto-icono{
+        color: darkslategrey;
+        transform: translateX(7%) translateY(-35%);
+    }
+
+    .filmora{transform: translateX(65%) translateY(-10%);}
+
+    #filmora-oscuro{
+        filter: brightness(0) saturate(100%) invert(21%) sepia(4%) saturate(3704%) hue-rotate(156deg) brightness(95%) contrast(79%);
+    }
+
+    #filmora-rectangulo{
+        filter: brightness(0) saturate(100%) invert(71%) sepia(58%) saturate(575%) hue-rotate(108deg) brightness(95%) contrast(96%);
+    }
+}
+
+/* ICONO ZEBRA */
+.i-23{
+    height: 86%;
+}
+
+.zebra{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#zebra-color{filter: var(--oscuro);}
+
+.i-23:hover{
+    height: 96%;
+
+    .texto-icono{
+        width: auto;
+        color: darkslategrey;
+        transform: translateX(0%) translateY(-15%);
+    }
+
+    .zebra{transform: translateX(65%) translateY(-10%);}
+
+    #zebra-color{
+        filter: brightness(0) saturate(100%) invert(39%) sepia(91%) saturate(6012%) hue-rotate(200deg) brightness(99%) contrast(98%);
+    }
+}
+
+/* ICONO OFFICE */
+.i-24{
+    height: 86%;
+}
+
+.office{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#office{filter: var(--oscuro);}
+
+.i-24:hover{
+    height: 96%;
+
+    .texto-icono{
+        width: auto;
+        color: darkslategrey;
+        transform:translateX(16%) translateY(-15%);
+    }
+
+    .office{transform: translateX(65%) translateY(-10%);}
+
+    #office{
+        filter: brightness(0) saturate(100%) invert(31%) sepia(98%) saturate(2748%) hue-rotate(1deg) brightness(90%) contrast(107%);
+    }
+}
+
+/* ICONO GOOGLE DOCS */
+.i-25{
+    height: 86%;
+}
+
+.google-docs{
+    position: absolute;
+    transform: translateX(65%) translateY(-5%);
+    height: 86%;
+    width: auto;
+    padding: 0;
+}
+
+#google-docs-oscuro{filter: var(--oscuro);}
+
+#google-docs-claro{filter: var(--claro);}
+
+.i-25:hover{
+    height: 96%;
+
+    .texto-icono{
+        width: auto;
+        color: darkslategrey;
+        transform: translateX(-2%) translateY(-35%);
+    }
+
+    .google-docs{transform: translateX(65%) translateY(-10%);}
+
+    #google-docs-oscuro{
+        filter: brightness(0) saturate(100%) invert(45%) sepia(13%) saturate(4365%) hue-rotate(188deg) brightness(103%) contrast(90%);
+    }
+
+    #google-docs-claro{
+        filter: brightness(0) saturate(100%) invert(88%) sepia(10%) saturate(7483%) hue-rotate(183deg) brightness(99%) contrast(97%);
+    }
+}
